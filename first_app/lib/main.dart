@@ -1,8 +1,9 @@
+// ignore_for_file: prefer_const_constructors
+
 import 'package:first_app/screens/index.dart';
 import 'package:flutter/material.dart';
 
 void main() {
-  // ignore: prefer_const_constructors
   runApp(MaterialApp(
     debugShowCheckedModeBanner: false,
     initialRoute: 'index',
