@@ -1,4 +1,4 @@
-// ignore_for_file: camel_case_types, prefer_const_constructors
+// ignore_for_file: camel_case_types, prefer_const_constructors, prefer_const_literals_to_create_immutables
 
 import 'package:flutter/material.dart';
 
@@ -11,15 +11,24 @@ class indexScreen extends StatelessWidget {
     return Container(
       child: Scaffold(
         appBar: AppBar(
-          title: Text('Contact'),
-          leading: Icon(Icons.search),
+          backgroundColor: const Color.fromARGB(255, 154, 124, 235),
+          title: Row(
+            children: [
+              Expanded(child: Text('Contact')),
+            ],
+          ),
+          actions: [
+            Padding(padding: EdgeInsets.all(10),
+            child:Icon(Icons.search),
+            ),
+          ],
         ),
         body: Center(
           child: Container(
             width: 500,
             height: double.infinity,
             decoration: BoxDecoration(
-              color: Colors.deepOrangeAccent,  
+              color: const Color.fromARGB(255, 181, 163, 231),  
             ),    
             child: ListView(
               children: [
@@ -28,6 +37,19 @@ class indexScreen extends StatelessWidget {
                   subtitle: Text('Hello World'),
                   leading: Icon(Icons.ac_unit_outlined),
                 ),
+                const Divider(),
+                ListTile(
+                  title: Text('Ola Mundo'),
+                  subtitle: Text('Hello World'),
+                  leading: Icon(Icons.ac_unit_outlined),
+                ),
+                const Divider(),
+                ListTile(
+                  title: Text('Ola Mundo'),
+                  subtitle: Text('Hello World'),
+                  leading: Icon(Icons.ac_unit_outlined),
+                ),
+                const Divider(),
               ],
             ),      
           ),
