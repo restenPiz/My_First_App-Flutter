@@ -63,11 +63,11 @@ class _indexScreenState extends State<indexScreen> {
               Expanded(child: Text('Adicionar Tarefa!')),
             ],
           ),
-          actions: [
+          /*actions: [
             Padding(padding: EdgeInsets.all(10),
             child:Icon(Icons.search),
             ),
-          ],
+          ],*/
         ),
         body: Center(
           child: Container(
