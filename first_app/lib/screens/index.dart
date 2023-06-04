@@ -19,7 +19,7 @@ class _indexScreenState extends State<indexScreen> {
 
   //Declarando um metodo que vai levar o unpressed do butao
    Future<void> _storeTask() async {
-    const String apiUrl = 'http://localhost:8000/api/produtos';
+    const String apiUrl = 'http://localhost:8000/api/storeTask';
 
     final response = await http.post(
       Uri.parse(apiUrl),
@@ -81,7 +81,6 @@ class _indexScreenState extends State<indexScreen> {
                 Padding(padding: EdgeInsets.all(10),
                   child: Column(
                     children: [
-                      Container(height: 50,),
                       TextField(
                         controller: _nameController,
                         decoration:InputDecoration(
