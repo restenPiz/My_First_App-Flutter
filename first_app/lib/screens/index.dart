@@ -33,21 +33,27 @@ class indexScreen extends StatelessWidget {
             child: ListView(
               children: [
                 ListTile(
-                  title: Text('Ola Mundo'),
+                  title: Text('Mauro Peniel'),
                   subtitle: Text('Hello World'),
-                  leading: Icon(Icons.ac_unit_outlined),
+                  leading: CircleAvatar(
+                    backgroundImage: AssetImage('assets/dif.jpg'),
+                  ),
                 ),
                 const Divider(),
                 ListTile(
                   title: Text('Ola Mundo'),
                   subtitle: Text('Hello World'),
-                  leading: Icon(Icons.ac_unit_outlined),
+                  leading: CircleAvatar(
+                    backgroundImage: AssetImage('assets/dif.jpg'),
+                  ),
                 ),
                 const Divider(),
                 ListTile(
                   title: Text('Ola Mundo'),
                   subtitle: Text('Hello World'),
-                  leading: Icon(Icons.ac_unit_outlined),
+                  leading: CircleAvatar(
+                    backgroundImage: AssetImage('assets/dif.jpg'),
+                  ),
                 ),
                 const Divider(),
               ],
