@@ -3,7 +3,10 @@ import 'dart:convert';
 import 'package:flutter/material.dart';
 import 'package:http/http.dart' as http;
 class indexScreen extends StatefulWidget {
+  const indexScreen({super.key});
+
   @override
+  // ignore: library_private_types_in_public_api
   _indexScreenState createState() => _indexScreenState();
 }
 
@@ -16,7 +19,7 @@ class _indexScreenState extends State<indexScreen> {
 
   //Declarando um metodo que vai levar o unpressed do butao
    Future<void> _storeTask() async {
-    final String apiUrl = 'http://localhost:8000/api/produtos';
+    const String apiUrl = 'http://localhost:8000/api/produtos';
 
     final response = await http.post(
       Uri.parse(apiUrl),
@@ -32,6 +35,7 @@ class _indexScreenState extends State<indexScreen> {
 
     if (response.statusCode == 201) {
       // Produto inserido com sucesso
+      // ignore: use_build_context_synchronously
       ScaffoldMessenger.of(context).showSnackBar(
         SnackBar(content: Text('A tarefa foi inserida com sucesso!')),
       );
@@ -40,6 +44,7 @@ class _indexScreenState extends State<indexScreen> {
       _taskController.clear();
     } else {
       // Algo deu errado ao inserir o produto
+      // ignore: use_build_context_synchronously
       ScaffoldMessenger.of(context).showSnackBar(
         SnackBar(content: Text('Falha ao inserir a tarefa!')),
       );
@@ -55,7 +60,7 @@ class _indexScreenState extends State<indexScreen> {
           backgroundColor: const Color.fromARGB(255, 154, 124, 235),
           title: Row(
             children: [
-              Expanded(child: Text('Contact')),
+              Expanded(child: Text('Adicionar Tarefa!')),
             ],
           ),
           actions: [
@@ -73,25 +78,32 @@ class _indexScreenState extends State<indexScreen> {
             ),    
             child: Column(
               children: [
-                TextField(
-                  controller: _nameController,
-                  decoration:InputDecoration(
-                    hintText:'Digite o seu nome:',
+                Padding(padding: EdgeInsets.all(10),
+                  child: Column(
+                    children: [
+                      Container(height: 50,),
+                      TextField(
+                        controller: _nameController,
+                        decoration:InputDecoration(
+                          hintText:'Digite o seu nome:',
+                        ),
+                      ),
+                      TextField(
+                        controller: _surnameController,
+                        decoration:InputDecoration(
+                          hintText:'Digite o seu nome:',
+                        ),
+                      ),
+                      TextField(
+                        controller: _taskController,
+                        decoration:InputDecoration(
+                          hintText:'Digite o seu nome:',
+                        ),
+                      ),
+                      ElevatedButton(onPressed: _storeTask, child: Text('Adicionar')),
+                    ],
                   ),
                 ),
-                TextField(
-                  controller: _surnameController,
-                  decoration:InputDecoration(
-                    hintText:'Digite o seu nome:',
-                  ),
-                ),
-                TextField(
-                  controller: _taskController,
-                  decoration:InputDecoration(
-                    hintText:'Digite o seu nome:',
-                  ),
-                ),
-                ElevatedButton(onPressed: _storeTask, child: Text('Adicionar'));
               ],
             ),      
           ),
