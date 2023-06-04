@@ -85,20 +85,26 @@ class _indexScreenState extends State<indexScreen> {
                         controller: _nameController,
                         decoration:InputDecoration(
                           hintText:'Digite o seu nome:',
+                          border: OutlineInputBorder(),
                         ),
                       ),
+                      Container(height: 15,),
                       TextField(
                         controller: _surnameController,
                         decoration:InputDecoration(
-                          hintText:'Digite o seu nome:',
+                          hintText:'Digite o seu apelido:',
+                          border: OutlineInputBorder(),
                         ),
                       ),
+                      Container(height: 15,),
                       TextField(
                         controller: _taskController,
                         decoration:InputDecoration(
-                          hintText:'Digite o seu nome:',
+                          hintText:'Digite a sua tarefa:',
+                          border: OutlineInputBorder(),
                         ),
                       ),
+                      Container(height: 15,),
                       ElevatedButton(onPressed: _storeTask, child: Text('Adicionar')),
                     ],
                   ),
