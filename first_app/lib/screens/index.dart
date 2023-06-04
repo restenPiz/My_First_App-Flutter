@@ -1,9 +1,50 @@
 // ignore_for_file: camel_case_types, prefer_const_constructors, prefer_const_literals_to_create_immutables
-
+import 'dart:convert';
 import 'package:flutter/material.dart';
+import 'package:http/http.dart' as http;
+class indexScreen extends StatefulWidget {
+  @override
+  _indexScreenState createState() => _indexScreenState();
+}
 
-class indexScreen extends StatelessWidget {
-  const indexScreen({super.key});
+class _indexScreenState extends State<indexScreen> {
+
+  //Declarando as varivies dos inputs que estamos a capturar
+  final TextEditingController _nameController=TextEditingController();
+  final TextEditingController _taskController=TextEditingController();
+  final TextEditingController _surnameController=TextEditingController();
+
+  //Declarando um metodo que vai levar o unpressed do butao
+   Future<void> _storeTask() async {
+    final String apiUrl = 'http://localhost:8000/api/produtos';
+
+    final response = await http.post(
+      Uri.parse(apiUrl),
+      headers: <String, String>{
+        'Content-Type': 'application/json; charset=UTF-8',
+      },
+      body: jsonEncode(<String, dynamic>{
+        'name': _nameController.text,
+        'surname': _surnameController.text,
+        'task': _taskController.text,
+      }),
+    );
+
+    if (response.statusCode == 201) {
+      // Produto inserido com sucesso
+      ScaffoldMessenger.of(context).showSnackBar(
+        SnackBar(content: Text('A tarefa foi inserida com sucesso!')),
+      );
+      _nameController.clear();
+      _surnameController.clear();
+      _taskController.clear();
+    } else {
+      // Algo deu errado ao inserir o produto
+      ScaffoldMessenger.of(context).showSnackBar(
+        SnackBar(content: Text('Falha ao inserir a tarefa!')),
+      );
+    }
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -30,32 +71,27 @@ class indexScreen extends StatelessWidget {
             decoration: BoxDecoration(
               color: const Color.fromARGB(255, 181, 163, 231),  
             ),    
-            child: ListView(
+            child: Column(
               children: [
-                ListTile(
-                  title: Text('Mauro Peniel'),
-                  subtitle: Text('Hello World'),
-                  leading: CircleAvatar(
-                    backgroundImage: AssetImage('assets/dif.jpg'),
+                TextField(
+                  controller: _nameController,
+                  decoration:InputDecoration(
+                    hintText:'Digite o seu nome:',
                   ),
                 ),
-                const Divider(),
-                ListTile(
-                  title: Text('Ola Mundo'),
-                  subtitle: Text('Hello World'),
-                  leading: CircleAvatar(
-                    backgroundImage: AssetImage('assets/dif.jpg'),
+                TextField(
+                  controller: _surnameController,
+                  decoration:InputDecoration(
+                    hintText:'Digite o seu nome:',
                   ),
                 ),
-                const Divider(),
-                ListTile(
-                  title: Text('Ola Mundo'),
-                  subtitle: Text('Hello World'),
-                  leading: CircleAvatar(
-                    backgroundImage: AssetImage('assets/dif.jpg'),
+                TextField(
+                  controller: _taskController,
+                  decoration:InputDecoration(
+                    hintText:'Digite o seu nome:',
                   ),
                 ),
-                const Divider(),
+                ElevatedButton(onPressed: _storeTask, child: Text('Adicionar'));
               ],
             ),      
           ),
