@@ -84,6 +84,7 @@ class _indexScreenState extends State<indexScreen> {
                       TextField(
                         controller: _nameController,
                         decoration:InputDecoration(
+                          labelText: 'Nome',
                           hintText:'Digite o seu nome:',
                           border: OutlineInputBorder(),
                         ),
@@ -92,6 +93,7 @@ class _indexScreenState extends State<indexScreen> {
                       TextField(
                         controller: _surnameController,
                         decoration:InputDecoration(
+                          labelText: 'Apelido',
                           hintText:'Digite o seu apelido:',
                           border: OutlineInputBorder(),
                         ),
@@ -100,6 +102,7 @@ class _indexScreenState extends State<indexScreen> {
                       TextField(
                         controller: _taskController,
                         decoration:InputDecoration(
+                          labelText: 'Tarefa',
                           hintText:'Digite a sua tarefa:',
                           border: OutlineInputBorder(),
                         ),
