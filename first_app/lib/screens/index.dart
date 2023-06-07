@@ -1,6 +1,7 @@
 // ignore_for_file: prefer_const_constructors, prefer_const_literals_to_create_immutables
 
 import 'dart:convert';
+import 'package:first_app/screens/allTasksScreen.dart';
 import 'package:flutter/material.dart';
 import 'package:http/http.dart' as http;
 
@@ -75,9 +76,6 @@ class _IndexScreenState extends State<IndexScreen> {
                 );
               },
             ),
-            ListTile(
-              title: Text('Ola Mundo'),
-            ),
           ],
         ),
       ),
@@ -131,21 +129,6 @@ class _IndexScreenState extends State<IndexScreen> {
             ],
           ),
         ),
-      ),
-    );
-  }
-}
-
-// ignore: use_key_in_widget_constructors
-class AllTasksScreen extends StatelessWidget {
-  @override
-  Widget build(BuildContext context) {
-    return Scaffold(
-      appBar: AppBar(
-        title: Text('Todas as Tarefas'),
-      ),
-      body: Center(
-        child: Text('Aqui estão todas as tarefas'),
       ),
     );
   }
