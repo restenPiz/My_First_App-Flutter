@@ -8,7 +8,7 @@ void main() {
     debugShowCheckedModeBanner: false,
     initialRoute: 'index',
     routes: {
-      'index':(context) => indexScreen(),
+      'index':(context) => IndexScreen(),
     },
   ));
 }
