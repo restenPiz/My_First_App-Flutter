@@ -69,24 +69,30 @@ class _AllTasksScreenState extends State<AllTasksScreen> {
                     color: Color.fromARGB(255, 235, 235, 235),
                     child: Column(
                       children: [
-                        TextField(
-                          decoration: InputDecoration(
-                            hintText: 'Titulo da tarefa',
+                        Padding(padding: EdgeInsets.all(20),
+                          child: Column(
+                            children: [
+                              TextField(
+                                decoration: InputDecoration(
+                                  hintText: 'Titulo da tarefa',
+                                ),
+                              ),
+                              TextField(
+                                decoration: InputDecoration(
+                                  hintText: 'Descricao',
+                                ),
+                              ),
+                              TextField(
+                                decoration: InputDecoration(
+                                  hintText: 'Data',
+                                ),
+                              ),
+                              ElevatedButton(
+                                onPressed: (){}, 
+                                child: Text('Adicionar Tarefa')
+                              ),
+                            ],
                           ),
-                        ),
-                        TextField(
-                          decoration: InputDecoration(
-                            hintText: 'Descricao',
-                          ),
-                        ),
-                        TextField(
-                          decoration: InputDecoration(
-                            hintText: 'Data',
-                          ),
-                        ),
-                        ElevatedButton(
-                          onPressed: (){}, 
-                          child: Text('Adicionar Tarefa')
                         ),
                       ],
                     ),
