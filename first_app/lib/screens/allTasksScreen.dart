@@ -35,37 +35,49 @@ class _AllTasksScreenState extends State<AllTasksScreen> {
         ),
 
         //Inicio do body do app
-        body: IndexedStack(
-          index: _currentIndex,
+        body: Column(
           children: [
-            Container(
-              //color: Color.fromARGB(255, 235, 235, 235),
-              child: ListView(
+            SizedBox(height: 10),
+            Expanded(
+              child: IndexedStack(
+                index: _currentIndex,
                 children: [
-                  Expanded(
-                    child: ListTile(
-                      shape: RoundedRectangleBorder(
-                        borderRadius: BorderRadius.circular(20),
-                      ),
-                      tileColor: Color.fromARGB(255, 235, 235, 235),
-                      leading: Icon(Icons.task),
-                      title: Text('Primeira Tarefa'),
-                      subtitle: Text('Ola Mundo!'),
+                  Container(
+                    //color: Color.fromARGB(255, 235, 235, 235),
+                    child: ListView(
+                      children: [
+                        Expanded(
+                          child: Padding(
+                            padding: EdgeInsets.symmetric(horizontal: 16), // Espaçamento esquerdo e direito
+                            child: Card(
+                              shape: RoundedRectangleBorder(
+                                borderRadius: BorderRadius.circular(20),
+                              ),
+                              color: Color.fromARGB(255, 235, 235, 235),
+                              child: ListTile(
+                                leading: Icon(Icons.task),
+                                title: Text('Primeira Tarefa'),
+                                subtitle: Text('Olá Mundo!'),
+                              ),
+                            ),
+                        ),
+                        ),
+                      ],
+                    ),
+                  ),
+                  Container(
+                    color: Color.fromARGB(255, 235, 235, 235),
+                    child: Center(
+                      child: Text('Página 2'),
+                    ),
+                  ),
+                  Container(
+                    color: Color.fromARGB(255, 235, 235, 235),
+                    child: Center(
+                      child: Text('Página 3'),
                     ),
                   ),
                 ],
-              ),
-            ),
-            Container(
-              color: Color.fromARGB(255, 235, 235, 235),
-              child: Center(
-                child: Text('Página 2'),
-              ),
-            ),
-            Container(
-              color: Color.fromARGB(255, 235, 235, 235),
-              child: Center(
-                child: Text('Página 3'),
               ),
             ),
           ],
