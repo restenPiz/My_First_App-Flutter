@@ -1,5 +1,6 @@
 // ignore_for_file: prefer_const_constructors
 
+import 'package:first_app/screens/allTasksScreen.dart';
 import 'package:first_app/screens/index.dart';
 import 'package:flutter/material.dart';
 
@@ -8,7 +9,7 @@ void main() {
     debugShowCheckedModeBanner: false,
     initialRoute: 'index',
     routes: {
-      'index':(context) => IndexScreen(),
+      'index':(context) => AllTasksScreen(),
     },
   ));
 }

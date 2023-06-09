@@ -18,6 +18,7 @@ class _IndexScreenState extends State<IndexScreen> {
   final TextEditingController _taskController = TextEditingController();
   final TextEditingController _surnameController = TextEditingController();
 
+  //Inicio do metodo responsavel por fazer o post na aplicacao
   Future<void> _storeTask() async {
     const String apiUrl = 'http://127.0.0.1:8000/api/storeMember';
 
