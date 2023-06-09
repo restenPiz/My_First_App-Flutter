@@ -14,6 +14,7 @@ class _AllTasksScreenState extends State<AllTasksScreen> {
   void _onTabTapped(int index) {
     setState(() {
       _currentIndex = index;
+      
     });
   }
 
