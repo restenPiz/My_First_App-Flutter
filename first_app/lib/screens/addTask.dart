@@ -1,13 +1,58 @@
 // ignore_for_file: unused_field, file_names, use_key_in_widget_constructors, camel_case_types, prefer_const_constructors
 
 import 'package:flutter/material.dart';
+import 'package:http/http.dart' as http;
+import 'dart:convert';
+class addTask extends StatefulWidget {
+  const addTask({Key? key}) : super(key: key);
 
-class addTask extends StatelessWidget {
+  @override
+  // ignore: library_private_types_in_public_api
+  _addTaskState createState() => _addTaskState();
+}
+
+class _addTaskState extends State<addTask> {
 
     //Inicio das variaveis
   final TextEditingController _titleController = TextEditingController();
   final TextEditingController _descriptionController = TextEditingController();
   final TextEditingController _dateController = TextEditingController();
+
+  //Inicio do metodo submit 
+  Future<void> _storeTask() async {
+    const String apiUrl = 'http://127.0.0.1:8000/api/storeMember';
+
+    final response = await http.post(
+      Uri.parse(apiUrl),
+      headers: <String, String>{
+        'Content-Type': 'application/json; charset=UTF-8',
+      },
+      body: jsonEncode(<String, dynamic>{
+        'Name': _titleController.text,
+        'Surname': _descriptionController.text,
+        'Task': _dateController.text,
+      }),
+    );
+
+    if (response.statusCode == 201) {
+      final jsonResponse = json.decode(response.body);
+      final message = jsonResponse['message'];
+
+      // ignore: use_build_context_synchronously
+      ScaffoldMessenger.of(context).showSnackBar(
+        SnackBar(content: Text(message)),
+      );
+
+      _titleController.clear();
+      _descriptionController.clear();
+      _dateController.clear();
+    } else {
+      // ignore: use_build_context_synchronously
+      ScaffoldMessenger.of(context).showSnackBar(
+        SnackBar(content: Text('Falha ao inserir a tarefa!')),
+      );
+    }
+  }
 
   @override
   Widget build(BuildContext context) {
