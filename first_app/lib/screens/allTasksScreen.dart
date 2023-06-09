@@ -1,3 +1,5 @@
+// ignore_for_file: file_names, use_key_in_widget_constructors, library_private_types_in_public_api, prefer_const_constructors, prefer_const_literals_to_create_immutables, avoid_unnecessary_containers
+
 import 'package:flutter/material.dart';
 
 class AllTasksScreen extends StatefulWidget {
@@ -86,15 +88,15 @@ class _AllTasksScreenState extends State<AllTasksScreen> {
           items: [
             BottomNavigationBarItem(
               icon: Icon(Icons.home),
-              label: 'Página 1',
+              label: 'Inicio',
             ),
             BottomNavigationBarItem(
               icon: Icon(Icons.search),
-              label: 'Página 2',
+              label: 'Adicionar Tarefa',
             ),
             BottomNavigationBarItem(
               icon: Icon(Icons.person),
-              label: 'Página 3',
+              label: 'Meu Perfil',
             ),
           ],
         ),
