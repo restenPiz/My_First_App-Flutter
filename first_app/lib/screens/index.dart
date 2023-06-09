@@ -59,10 +59,11 @@ class _IndexScreenState extends State<IndexScreen> {
         backgroundColor: const Color.fromARGB(255, 154, 124, 235),
         title: Row(
           children: [
-            Expanded(child: Text('Adicionar Tarefa!')),
+            Expanded(child: Text('Adicionar Tarefa!',)),
           ],
         ),
       ),
+      
       drawer: Drawer(
         backgroundColor: Color.fromARGB(255, 44, 14, 115),
         child: ListView(
