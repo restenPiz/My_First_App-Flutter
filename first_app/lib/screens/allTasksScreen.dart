@@ -37,7 +37,7 @@ class _AllTasksScreenState extends State<AllTasksScreen> {
         //Inicio do body do app
         body: Column(
           children: [
-            SizedBox(height: 10),
+            //SizedBox(height: 10),
             Expanded(
               child: IndexedStack(
                 index: _currentIndex,
@@ -67,8 +67,28 @@ class _AllTasksScreenState extends State<AllTasksScreen> {
                   ),
                   Container(
                     color: Color.fromARGB(255, 235, 235, 235),
-                    child: Center(
-                      child: Text('Página 2'),
+                    child: Column(
+                      children: [
+                        TextField(
+                          decoration: InputDecoration(
+                            hintText: 'Titulo da tarefa',
+                          ),
+                        ),
+                        TextField(
+                          decoration: InputDecoration(
+                            hintText: 'Descricao',
+                          ),
+                        ),
+                        TextField(
+                          decoration: InputDecoration(
+                            hintText: 'Data',
+                          ),
+                        ),
+                        ElevatedButton(
+                          onPressed: (){}, 
+                          child: Text('Adicionar Tarefa')
+                        ),
+                      ],
                     ),
                   ),
                   Container(
