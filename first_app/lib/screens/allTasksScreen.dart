@@ -39,21 +39,19 @@ class _AllTasksScreenState extends State<AllTasksScreen> {
           index: _currentIndex,
           children: [
             Container(
-              color: Color.fromARGB(255, 235, 235, 235),
-              child: Column(
+              //color: Color.fromARGB(255, 235, 235, 235),
+              child: ListView(
                 children: [
                   Expanded(
                     child: ListTile(
-                      shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(20)),
-                      tileColor: Colors.white,
-                      trailing: Container(
-                        width: 420,
-                        height: 100,
-                        decoration: BoxDecoration(
-                          color: Colors.amber,
-                        ),
+                      shape: RoundedRectangleBorder(
+                        borderRadius: BorderRadius.circular(20),
                       ),
-                    )
+                      tileColor: Color.fromARGB(255, 235, 235, 235),
+                      leading: Icon(Icons.task),
+                      title: Text('Primeira Tarefa'),
+                      subtitle: Text('Ola Mundo!'),
+                    ),
                   ),
                 ],
               ),
