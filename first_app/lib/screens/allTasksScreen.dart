@@ -21,7 +21,7 @@ class _AllTasksScreenState extends State<AllTasksScreen> {
     return Container(
       child: Scaffold(
         appBar: AppBar(
-          backgroundColor: Color.fromARGB(255, 235, 235, 235),
+          backgroundColor: Color.fromARGB(255, 205, 205, 205),
           title: Text(
             'Emma - App',
             style: TextStyle(
@@ -29,36 +29,9 @@ class _AllTasksScreenState extends State<AllTasksScreen> {
             ),
           ),
           elevation: 0,
-          centerTitle: false,
+          //centerTitle: true,
         ),
-        drawer: Drawer(
-          backgroundColor: Colors.amber,
-          child: ListView(
-            children: [
-              DrawerHeader(
-                decoration: BoxDecoration(
-                  color: Colors.amber,
-                ),
-                child: Text(
-                  'Título do Drawer',
-                  style: TextStyle(
-                    color: Colors.white,
-                    fontSize: 20,
-                  ),
-                ),
-              ),
-              ListTile(
-                title: Text('Todas as Tarefas'),
-                onTap: () {
-                  Navigator.push(
-                    context,
-                    MaterialPageRoute(builder: (context) => AllTasksScreen()),
-                  );
-                },
-              ),
-            ],
-          ),
-        ),
+        //Inicio do body do app
         body: IndexedStack(
           index: _currentIndex,
           children: [
@@ -82,7 +55,10 @@ class _AllTasksScreenState extends State<AllTasksScreen> {
             ),
           ],
         ),
+
+        //Inicio do menu inferior do app
         bottomNavigationBar: BottomNavigationBar(
+          backgroundColor: Color.fromARGB(255, 205, 205, 205),
           currentIndex: _currentIndex,
           onTap: _onTabTapped,
           items: [
