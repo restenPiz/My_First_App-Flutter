@@ -20,6 +20,8 @@ class _AllTasksScreenState extends State<AllTasksScreen> {
   Widget build(BuildContext context) {
     return Container(
       child: Scaffold(
+
+        //Inicio do appBar
         appBar: AppBar(
           backgroundColor: Color.fromARGB(255, 205, 205, 205),
           title: Text(
@@ -31,6 +33,7 @@ class _AllTasksScreenState extends State<AllTasksScreen> {
           elevation: 0,
           //centerTitle: true,
         ),
+
         //Inicio do body do app
         body: IndexedStack(
           index: _currentIndex,
