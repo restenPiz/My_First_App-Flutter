@@ -74,11 +74,14 @@ class _AllTasksScreenState extends State<AllTasksScreen> {
                             children: [
                               TextField(
                                 decoration: InputDecoration(
+                                  labelText: 'Titulo',
                                   hintText: 'Titulo da tarefa',
+                                 
                                 ),
                               ),
                               TextField(
                                 decoration: InputDecoration(
+                                  labelText: 'Descricao',
                                   hintText: 'Descricao',
                                 ),
                               ),
