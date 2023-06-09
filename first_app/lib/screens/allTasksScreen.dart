@@ -40,8 +40,22 @@ class _AllTasksScreenState extends State<AllTasksScreen> {
           children: [
             Container(
               color: Color.fromARGB(255, 235, 235, 235),
-              child: Center(
-                child: Text('Página 1'),
+              child: Column(
+                children: [
+                  Expanded(
+                    child: ListTile(
+                      shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(20)),
+                      tileColor: Colors.white,
+                      trailing: Container(
+                        width: 420,
+                        height: 100,
+                        decoration: BoxDecoration(
+                          color: Colors.amber,
+                        ),
+                      ),
+                    )
+                  ),
+                ],
               ),
             ),
             Container(
@@ -70,7 +84,7 @@ class _AllTasksScreenState extends State<AllTasksScreen> {
               label: 'Inicio',
             ),
             BottomNavigationBarItem(
-              icon: Icon(Icons.search),
+              icon: Icon(Icons.add),
               label: 'Adicionar Tarefa',
             ),
             BottomNavigationBarItem(
