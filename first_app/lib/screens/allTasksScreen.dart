@@ -18,20 +18,21 @@ class AllTasksScreen extends StatelessWidget {
           elevation: 0,
         ),
         drawer: Drawer(
-        backgroundColor: Colors.amber,
-        child: ListView(
-          children: [
-            ListTile(
-              title: Text('Todas as Tarefas'),
-              onTap: () {
-                Navigator.push(
-                  context,
-                  MaterialPageRoute(builder: (context) => AllTasksScreen()),
-                );
-              },
-            ),
-          ],
-        ),),
+          backgroundColor: Colors.amber,
+          child: ListView(
+            children: [
+              ListTile(
+                title: Text('Todas as Tarefas'),
+                onTap: () {
+                  Navigator.push(
+                    context,
+                    MaterialPageRoute(builder: (context) => AllTasksScreen()),
+                  );
+                },
+              ),
+            ],
+          ),
+        ),
         body: Container(
           color: Color.fromARGB(255, 235, 235, 235),
         ),
