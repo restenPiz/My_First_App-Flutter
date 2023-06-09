@@ -1,3 +1,5 @@
+// ignore_for_file: unused_field, file_names, use_key_in_widget_constructors, camel_case_types, prefer_const_constructors
+
 import 'package:flutter/material.dart';
 
 class addTask extends StatelessWidget {
@@ -22,6 +24,7 @@ class addTask extends StatelessWidget {
                     hintText: 'Titulo da tarefa',
                     border: OutlineInputBorder(),
                   ),
+                  controller: _titleController,
                 ),
                 Container(
                   height: 15,
@@ -32,6 +35,7 @@ class addTask extends StatelessWidget {
                     hintText: 'Descricao',
                     border: OutlineInputBorder(),
                   ),
+                  controller: _descriptionController,
                 ),
                 Container(
                   height: 15,
@@ -42,6 +46,7 @@ class addTask extends StatelessWidget {
                     hintText: 'Ex: 11/09/2002',
                     border: OutlineInputBorder(),
                   ),
+                  controller: _dateController,
                 ),
                 Container(
                   height: 20,
