@@ -28,9 +28,9 @@ class _addTaskState extends State<addTask> {
         'Content-Type': 'application/json; charset=UTF-8',
       },
       body: jsonEncode(<String, dynamic>{
-        'Name': _titleController.text,
-        'Surname': _descriptionController.text,
-        'Task': _dateController.text,
+        'Title': _titleController.text,
+        'Description': _descriptionController.text,
+        'Date': _dateController.text,
       }),
     );
 
@@ -97,7 +97,7 @@ class _addTaskState extends State<addTask> {
                   height: 20,
                 ),
                 ElevatedButton(
-                  onPressed: (){}, 
+                  onPressed:_storeTask,
                   child: Text('Adicionar Tarefa')
                 ),
               ],
