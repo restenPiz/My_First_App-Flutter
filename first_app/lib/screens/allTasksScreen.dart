@@ -1,7 +1,8 @@
 // ignore_for_file: file_names, use_key_in_widget_constructors, library_private_types_in_public_api, prefer_const_constructors, prefer_const_literals_to_create_immutables, avoid_unnecessary_containers
 
 import 'package:flutter/material.dart';
-
+import 'Task.dart';
+import 'addTask.dart';
 class AllTasksScreen extends StatefulWidget {
   @override
   _AllTasksScreenState createState() => _AllTasksScreenState();
@@ -9,6 +10,11 @@ class AllTasksScreen extends StatefulWidget {
 
 class _AllTasksScreenState extends State<AllTasksScreen> {
   int _currentIndex = 0;
+
+  //Inicio das variaveis
+  final TextEditingController _titleController = TextEditingController();
+  final TextEditingController _descriptionController = TextEditingController();
+  final TextEditingController _dateController = TextEditingController();
 
   void _onTabTapped(int index) {
     setState(() {
@@ -42,64 +48,9 @@ class _AllTasksScreenState extends State<AllTasksScreen> {
               child: IndexedStack(
                 index: _currentIndex,
                 children: [
-                  Container(
-                    //color: Color.fromARGB(255, 235, 235, 235),
-                    child: ListView(
-                      children: [
-                        Expanded(
-                          child: Padding(
-                            padding: EdgeInsets.symmetric(horizontal: 16), // Espaçamento esquerdo e direito
-                            child: Card(
-                              shape: RoundedRectangleBorder(
-                                borderRadius: BorderRadius.circular(20),
-                              ),
-                              color: Color.fromARGB(255, 235, 235, 235),
-                              child: ListTile(
-                                leading: Icon(Icons.check_box),
-                                title: Text('Primeira Tarefa'),
-                                subtitle: Text('Olá Mundo!'),
-                              ),
-                            ),
-                          ),
-                        ),
-                      ],
-                    ),
-                  ),
-                  Container(
-                    color: Color.fromARGB(255, 235, 235, 235),
-                    child: Column(
-                      children: [
-                        Padding(padding: EdgeInsets.all(20),
-                          child: Column(
-                            children: [
-                              TextField(
-                                decoration: InputDecoration(
-                                  labelText: 'Titulo',
-                                  hintText: 'Titulo da tarefa',
-                                 
-                                ),
-                              ),
-                              TextField(
-                                decoration: InputDecoration(
-                                  labelText: 'Descricao',
-                                  hintText: 'Descricao',
-                                ),
-                              ),
-                              TextField(
-                                decoration: InputDecoration(
-                                  hintText: 'Data',
-                                ),
-                              ),
-                              ElevatedButton(
-                                onPressed: (){}, 
-                                child: Text('Adicionar Tarefa')
-                              ),
-                            ],
-                          ),
-                        ),
-                      ],
-                    ),
-                  ),
+                  //Container(),
+                  Task(),
+                  addTask(),
                   Container(
                     color: Color.fromARGB(255, 235, 235, 235),
                     child: Center(
