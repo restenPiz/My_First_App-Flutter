@@ -1,7 +1,11 @@
 import 'package:flutter/material.dart';
 
 class addTask extends StatelessWidget {
-  const addTask({super.key});
+
+    //Inicio das variaveis
+  final TextEditingController _titleController = TextEditingController();
+  final TextEditingController _descriptionController = TextEditingController();
+  final TextEditingController _dateController = TextEditingController();
 
   @override
   Widget build(BuildContext context) {

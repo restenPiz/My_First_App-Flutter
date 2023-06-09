@@ -11,11 +11,6 @@ class AllTasksScreen extends StatefulWidget {
 class _AllTasksScreenState extends State<AllTasksScreen> {
   int _currentIndex = 0;
 
-  //Inicio das variaveis
-  final TextEditingController _titleController = TextEditingController();
-  final TextEditingController _descriptionController = TextEditingController();
-  final TextEditingController _dateController = TextEditingController();
-
   void _onTabTapped(int index) {
     setState(() {
       _currentIndex = index;
