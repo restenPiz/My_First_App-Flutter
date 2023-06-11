@@ -56,9 +56,32 @@ class _TaskState extends State<Task> {
                 title: Text(produto['Title']),
                 subtitle: Text(produto['Description']),
                 trailing: IconButton(
-                  onPressed: (){}, 
-                  icon: Icon(Icons.delete)
-                  ),
+                  icon: Icon(Icons.delete),
+                  onPressed: () {
+                    showDialog(
+                      context: context,
+                      builder: (BuildContext context) {
+                        return AlertDialog(
+                          title: Text('Eliminar Tarefa'),
+                          content: Text('Tem certeza que deseja eliminar essa tarefa?'),
+                          actions: <Widget>[
+                            TextButton(
+                              child: Text('Cancelar'),
+                              onPressed: () {
+                                Navigator.of(context).pop();
+                              },
+                            ),
+                            TextButton(
+                              child: Text('Eliminar'),
+                              onPressed: () {
+                              },
+                            ),
+                          ],
+                        );
+                      },
+                    );
+                  },
+                ),
               ),
             ),
           );
