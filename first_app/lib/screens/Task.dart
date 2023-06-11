@@ -52,9 +52,13 @@ class _TaskState extends State<Task> {
               ),
               color: const Color.fromARGB(255, 235, 235, 235),
               child: ListTile(
-                leading: Icon(Icons.check_box),
+                //leading: Icon(Icons.check_box),
                 title: Text(produto['Title']),
                 subtitle: Text(produto['Description']),
+                trailing: IconButton(
+                  onPressed: (){}, 
+                  icon: Icon(Icons.delete)
+                  ),
               ),
             ),
           );
