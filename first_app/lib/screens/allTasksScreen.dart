@@ -50,7 +50,7 @@ class _AllTasksScreenState extends State<AllTasksScreen> {
                   Container(
                     color: Color.fromARGB(255, 235, 235, 235),
                     child: Center(
-                      child: Text('Página 3'),
+                      child: Text('Perfil'),
                     ),
                   ),
                 ],

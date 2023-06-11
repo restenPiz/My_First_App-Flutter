@@ -45,13 +45,12 @@ class _TaskState extends State<Task> {
           final produto = produtos[index];
 
           return Padding(
-            // ignore: prefer_const_constructors
-            padding: EdgeInsets.symmetric(horizontal: 16),
+            padding: const EdgeInsets.symmetric(horizontal: 16),
             child: Card(
               shape: RoundedRectangleBorder(
                 borderRadius: BorderRadius.circular(20),
               ),
-              color: Color.fromARGB(255, 235, 235, 235),
+              color: const Color.fromARGB(255, 235, 235, 235),
               child: ListTile(
                 leading: Icon(Icons.check_box),
                 title: Text(produto['Title']),
