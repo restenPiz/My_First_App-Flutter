@@ -14,6 +14,7 @@ class Task extends StatefulWidget {
 class _TaskState extends State<Task> {
   List<dynamic> produtos = [];
 
+  //Inicio do metodo que vai retornar todos as tarefas
   Future<void> _getProdutos() async {
     final String apiUrl = 'http://localhost:8000/api/allTask';
 
@@ -26,6 +27,28 @@ class _TaskState extends State<Task> {
       });
     } else {
       throw Exception('Falha ao carregar os produtos');
+    }
+  }
+
+  //Inicio do metodo que vai ligar a API para eliminar as tarefas
+  Future<void> _deleteTask(int index) async {
+    final produto = produtos[index];
+
+    final String deleteUrl = 'http://localhost:8000/api/deleteTask/${produto['id']}';
+
+    final response = await http.delete(Uri.parse(deleteUrl));
+
+    if (response.statusCode == 200) {
+      setState(() {
+        produtos.removeAt(index);
+      });
+      ScaffoldMessenger.of(context).showSnackBar(
+        SnackBar(
+          content: Text('Tarefa eliminada com sucesso.'),
+        ),
+      );
+    } else {
+      throw Exception('Falha ao eliminar a tarefa');
     }
   }
 
@@ -74,6 +97,8 @@ class _TaskState extends State<Task> {
                             TextButton(
                               child: Text('Eliminar'),
                               onPressed: () {
+                                Navigator.of(context).pop();
+                                _deleteTask(index);
                               },
                             ),
                           ],
