@@ -33,27 +33,24 @@ class _TaskState extends State<Task> {
   //Inicio do metodo que vai ligar a API para eliminar as tarefas
   Future<void> _deleteTask(int index) async {
     final produto = produtos[index];
-
     final String deleteUrl = 'http://localhost:8000/api/deleteTask/${produto['id']}';
 
-    final response = await http.delete(Uri.parse(deleteUrl));
+    final response = await http.get(Uri.parse(deleteUrl));
 
-    if (response.statusCode == 201) {
+    if (response.statusCode == 200) {
       final jsonResponse = json.decode(response.body);
       final message = jsonResponse['message'];
 
-      // ignore: use_build_context_synchronously
       ScaffoldMessenger.of(context).showSnackBar(
         SnackBar(content: Text(message)),
       );
-
     } else {
-      // ignore: use_build_context_synchronously
       ScaffoldMessenger.of(context).showSnackBar(
         SnackBar(content: Text('Falha ao eliminar a tarefa!')),
       );
     }
   }
+
 
   @override
   void initState() {
