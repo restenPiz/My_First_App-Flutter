@@ -50,7 +50,7 @@ class _TaskState extends State<Task> {
     } else {
       // ignore: use_build_context_synchronously
       ScaffoldMessenger.of(context).showSnackBar(
-        SnackBar(content: Text('Falha ao inserir a tarefa!')),
+        SnackBar(content: Text('Falha ao eliminar a tarefa!')),
       );
     }
   }
