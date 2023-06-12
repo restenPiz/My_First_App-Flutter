@@ -38,17 +38,20 @@ class _TaskState extends State<Task> {
 
     final response = await http.delete(Uri.parse(deleteUrl));
 
-    if (response.statusCode == 200) {
-      setState(() {
-        produtos.removeAt(index);
-      });
+    if (response.statusCode == 201) {
+      final jsonResponse = json.decode(response.body);
+      final message = jsonResponse['message'];
+
+      // ignore: use_build_context_synchronously
       ScaffoldMessenger.of(context).showSnackBar(
-        SnackBar(
-          content: Text('Tarefa eliminada com sucesso.'),
-        ),
+        SnackBar(content: Text(message)),
       );
+
     } else {
-      throw Exception('Falha ao eliminar a tarefa');
+      // ignore: use_build_context_synchronously
+      ScaffoldMessenger.of(context).showSnackBar(
+        SnackBar(content: Text('Falha ao inserir a tarefa!')),
+      );
     }
   }
 
