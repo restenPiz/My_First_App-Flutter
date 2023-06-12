@@ -7,8 +7,10 @@ class Profile extends StatelessWidget {
   Widget build(BuildContext context) {
     return  Container (
       color: Color.fromARGB(255, 235, 235, 235),
-      child: Center(
-        child: Text('Perfil'),
+      child: Container(
+        width: double.infinity,
+        height: 350,
+        color: Colors.amber,
       ),
     );
   }
