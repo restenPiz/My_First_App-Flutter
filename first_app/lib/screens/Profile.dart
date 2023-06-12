@@ -28,6 +28,7 @@ class Profile extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       backgroundColor: Color.fromARGB(255, 235, 235, 235),
+      //Inicio da widget Stack que permite agrupar mais widgets dentro da Stack
       body: Stack(
         children: [
           Container(
