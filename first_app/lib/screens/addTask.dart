@@ -98,7 +98,16 @@ class _addTaskState extends State<addTask> {
                 ),
                 ElevatedButton(
                   onPressed:_storeTask,
-                  child: Text('Adicionar Tarefa')
+                  style: ElevatedButton.styleFrom(
+                    primary: Colors.green,
+                    onPrimary: Colors.white,
+                    padding: EdgeInsets.symmetric(vertical: 12, horizontal: 20),
+                    shape: RoundedRectangleBorder(
+                      borderRadius: BorderRadius.circular(8), // Bordas arredondadas do botão
+                    ),
+                    minimumSize: Size(200, 50)
+                  ),
+                  child: Text('Adicionar Tarefa'),
                 ),
               ],
             ),
