@@ -1,55 +1,78 @@
-// ignore_for_file: prefer_const_constructors, prefer_const_literals_to_create_immutables
-
+// ignore_for_file: prefer_const_constructors, prefer_const_literals_to_create_immutables, dead_code
 import 'package:flutter/material.dart';
+
+void main() {
+  runApp(MyApp());
+}
+
+class MyApp extends StatelessWidget {
+  const MyApp({Key? key}) : super(key: key);
+
+  @override
+  Widget build(BuildContext context) {
+    return MaterialApp(
+      home: Scaffold(
+        appBar: AppBar(
+          title: Text('Profile'),
+        ),
+        body: Profile(),
+      ),
+    );
+  }
+}
 
 class Profile extends StatelessWidget {
   const Profile({Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
-    return Container(
-      color: Color.fromARGB(255, 235, 235, 235),
-      child: Container(
-        width: double.infinity,
-        height: 400,
-        color: Colors.amber,
-        child: Stack(
-          alignment: Alignment.center,
-          children: [
-            Container(
-              width: 150,
-              height: 150,
-              decoration: BoxDecoration(
-                shape: BoxShape.circle,
-                color: Colors.white,
-                image: DecorationImage(
-                  image: AssetImage('assets/homem.jpg'),
-                  fit: BoxFit.cover,
+    return Scaffold(
+      backgroundColor: Color.fromARGB(255, 235, 235, 235),
+      body: Stack(
+        children: [
+          Container(
+            width: double.infinity,
+            height: 900,
+            color: const Color.fromARGB(255, 162, 161, 155),
+            child: Stack(
+              alignment: Alignment.center,
+              children: [
+                Container(
+                  width: 150,
+                  height: 150,
+                  decoration: BoxDecoration(
+                    shape: BoxShape.circle,
+                    color: Colors.white,
+                    image: DecorationImage(
+                      image: AssetImage('assets/homem.jpg'),
+                      fit: BoxFit.cover,
+                    ),
+                  ),
                 ),
-              ),
-            ),
-            Positioned(
-              bottom: 50,
-              child: Column(
-                children: [
-                  Text(
-                    'Mauro Peniel',
-                    style: TextStyle(
-                      fontSize: 20,
-                      fontWeight: FontWeight.bold,
-                    ),
+                Positioned(
+                  bottom: 300,
+                  child: Column(
+                    children: [
+                      Text(
+                        'Mauro Peniel',
+                        style: TextStyle(
+                          fontSize: 20,
+                          fontWeight: FontWeight.bold,
+                        ),
+                      ),
+                      Text(
+                        'Software Engineer',
+                        style: TextStyle(
+                          fontSize: 16,
+                        ),
+                      ),
+                    ],
                   ),
-                  Text(
-                    'Software Engineer',
-                    style: TextStyle(
-                      fontSize: 16,
-                    ),
-                  ),
-                ],
-              ),
+                ),
+              ],
             ),
-          ],
-        ),
+          ),
+        ],
       ),
     );
   }
