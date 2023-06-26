@@ -26,6 +26,7 @@ class _TaskState extends State<Task> {
         produtos = data;
       });
     } else {
+      //Apresenta o erro na tela em forma de uma excepcao
       throw Exception('Falha ao carregar os produtos');
     }
   }
