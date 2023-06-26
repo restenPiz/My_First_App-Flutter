@@ -12,9 +12,11 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       home: Scaffold(
+        //Inicio do appBar do meu app
         appBar: AppBar(
           title: Text('Profile'),
         ),
+        //Inicio do body que vai instanciar um outro widget externo
         body: Profile(),
       ),
     );
