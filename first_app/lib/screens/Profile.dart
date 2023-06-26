@@ -40,6 +40,7 @@ class Profile extends StatelessWidget {
             child: Stack(
               alignment: Alignment.center,
               children: [
+                //Inicio do container responsavel por colocar a foto dentro do circulo
                 Container(
                   width: 150,
                   height: 150,
