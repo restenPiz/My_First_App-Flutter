@@ -46,6 +46,8 @@ class _AllTasksScreenState extends State<AllTasksScreen> {
                 index: _currentIndex,
                 children: [
                   //Container(),
+
+                  //Inicio dos widgets instanciados em outros arquivos
                   Task(),
                   addTask(),
                   Profile(),
