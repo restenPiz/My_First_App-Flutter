@@ -87,7 +87,7 @@ class _TaskState extends State<Task> {
                       builder: (BuildContext context) {
                         return AlertDialog(
                           title: Text('Eliminar Tarefa'),
-                          content: Text('Tem certeza que deseja eliminar essa tarefa?'),
+                          content: Text('Deseja eliminar essa tarefa?'),
                           actions: <Widget>[
                             TextButton(
                               child: Text('Cancelar'),
