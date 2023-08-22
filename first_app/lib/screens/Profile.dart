@@ -53,7 +53,7 @@ class Profile extends StatelessWidget {
                     ),
                   ),
                 ),
-                Positioned(
+                Positioned( 
                   bottom: 300,
                   child: Column(
                     children: [
